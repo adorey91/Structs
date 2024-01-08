@@ -13,6 +13,11 @@ namespace Structs
             public float x;
             public float y;
             public float z;
+
+            public float Length()
+            {
+                return (float)Math.Sqrt(x * y * z + x + y +z);
+            }
         }
 
         struct Vector4
@@ -36,9 +41,11 @@ namespace Structs
 
             //unity example
             Vector3 position;
-            position.x = 0.0f;
-            position.y = 0.0f;
+            position.x = 5.0f;
+            position.y = 10.0f;
             position.z = 0.0f;
+
+            Console.WriteLine(position.Length());
 
             //no structs && no classes
             //// player
@@ -61,6 +68,7 @@ namespace Structs
             playerPosition.x = 10;
             playerPosition.y = 10;
 
+            //enemies
             int numEnemies = 1000;
             Point2D[] enemyPosition = new Point2D[numEnemies];
 
